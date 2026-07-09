@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Sesimi Color Picker",
+  "version": "1.0.0",
+  "description": "Pick any color on a page, copy it in HEX/RGB/HSL, and check it against your brand palette.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Sesimi Color Picker",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>Sesimi Color Picker</title>
+</head>
+<body>
+  <header class="header">
+    <h1 class="title">Sesimi Color Picker</h1>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button id="tabPickerBtn" class="tab active" role="tab" aria-selected="true" data-tab="picker">Color Picker</button>
+    <button id="tabBrandBtn" class="tab" role="tab" aria-selected="false" data-tab="brand">Brand Colors</button>
+  </nav>
+
+  <!-- ============ Tab: Color Picker ============ -->
+  <section id="tab-picker" class="tab-panel" role="tabpanel">
+    <button id="pickBtn" class="pick-btn">
+      <span class="pick-icon" aria-hidden="true">🎯</span>
+      <span>Pick a color</span>
+    </button>
+
+    <div id="result" class="result hidden">
+      <div id="swatch" class="swatch"></div>
+      <div class="formats">
+        <div class="format-row" data-format="hex">
+          <span class="format-label">HEX</span>
+          <span class="format-value" id="hexValue">—</span>
+          <button class="copy-btn" data-copy="hex" title="Copy HEX">Copy</button>
+        </div>
+        <div class="format-row" data-format="rgb">
+          <span class="format-label">RGB</span>
+          <span class="format-value" id="rgbValue">—</span>
+          <button class="copy-btn" data-copy="rgb" title="Copy RGB">Copy</button>
+        </div>
+        <div class="format-row" data-format="hsl">
+          <span class="format-label">HSL</span>
+          <span class="format-value" id="hslValue">—</span>
+          <button class="copy-btn" data-copy="hsl" title="Copy HSL">Copy</button>
+        </div>
+      </div>
+
+      <div id="compliance" class="compliance"></div>
+    </div>
+
+    <div class="history-section">
+      <div class="section-head">
+        <h2 class="section-title">Recent</h2>
+        <button id="clearBtn" class="link-btn hidden">Clear</button>
+      </div>
+      <div id="history" class="swatch-grid">
+        <p class="empty-hint">Colors you pick will show up here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Tab: Brand Colors ============ -->
+  <section id="tab-brand" class="tab-panel hidden" role="tabpanel">
+    <p class="panel-hint">Picked colors are matched against this palette. Click a color to edit it.</p>
+
+    <div id="brandEditor" class="brand-editor hidden">
+      <div class="editor-title" id="editorTitle">Edit color</div>
+
+      <label class="field">
+        <span class="field-label">Name</span>
+        <input type="text" id="brandNameInput" class="text-input" spellcheck="false" placeholder="e.g. VW Dark Blue" />
+      </label>
+
+      <label class="field">
+        <span class="field-label">Category</span>
+        <select id="brandCategoryInput" class="text-input">
+          <option value="Primary">Primary</option>
+          <option value="Secondary">Secondary</option>
+          <option value="Tertiary">Tertiary</option>
+          <option value="Custom">Custom</option>
+        </select>
+      </label>
+
+      <div class="editor-row">
+        <input type="color" id="brandColorInput" class="color-input" value="#001e50" />
+        <div class="editor-values">
+          <label class="field inline">
+            <span class="field-label">HEX</span>
+            <input type="text" id="brandHexInput" class="text-input mono" spellcheck="false" maxlength="7" placeholder="#001E50" />
+          </label>
+          <div class="rgb-row">
+            <label class="field inline"><span class="field-label">R</span><input type="number" id="brandRInput" class="text-input mono num" min="0" max="255" /></label>
+            <label class="field inline"><span class="field-label">G</span><input type="number" id="brandGInput" class="text-input mono num" min="0" max="255" /></label>
+            <label class="field inline"><span class="field-label">B</span><input type="number" id="brandBInput" class="text-input mono num" min="0" max="255" /></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="editor-actions">
+        <button id="brandSaveBtn" class="pick-btn compact">Save</button>
+        <button id="brandDeleteBtn" class="ghost-btn">Delete</button>
+        <button id="brandCancelBtn" class="ghost-btn">Cancel</button>
+      </div>
+      <p id="brandStatus" class="panel-status"></p>
+    </div>
+
+    <button id="brandAddBtn" class="pick-btn compact add-btn">+ Add color</button>
+
+    <div id="brandGroups"></div>
+  </section>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
