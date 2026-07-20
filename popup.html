@@ -18,6 +18,15 @@
 
   <!-- ============ Tab: Color Picker ============ -->
   <section id="tab-picker" class="tab-panel" role="tabpanel">
+    <div class="target-section">
+      <div class="section-head">
+        <h2 class="section-title">Compare to target</h2>
+      </div>
+      <select id="targetSelect" class="text-input">
+        <option value="">No target</option>
+      </select>
+    </div>
+
     <button id="pickBtn" class="pick-btn">
       <span class="pick-icon" aria-hidden="true">🎯</span>
       <span>Pick a color</span>
@@ -42,6 +51,8 @@
           <button class="copy-btn" data-copy="hsl" title="Copy HSL">Copy</button>
         </div>
       </div>
+
+      <div id="targetCompare" class="compliance hidden"></div>
 
       <div id="compliance" class="compliance"></div>
     </div>
@@ -103,12 +114,13 @@
     </div>
 
     <button id="brandAddBtn" class="pick-btn compact add-btn">+ Add color</button>
+    <button id="brandResetBtn" class="ghost-btn reset-btn">Reset to default palette</button>
 
     <div id="brandGroups"></div>
   </section>
 
   <div id="toast" class="toast hidden"></div>
 
-  <script src="popup.js"></script>
+  <script type="module" src="popup.js"></script>
 </body>
 </html>

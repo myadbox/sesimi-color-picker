@@ -199,6 +199,13 @@ body {
   background: rgba(217, 119, 6, 0.06);
 }
 
+.target-section {
+  margin-bottom: 14px;
+}
+.target-section .text-input {
+  cursor: pointer;
+}
+
 .history-section {
   margin-top: 16px;
 }
@@ -286,6 +293,10 @@ body {
 .add-btn {
   width: 100%;
   margin-top: 4px;
+}
+.reset-btn {
+  width: 100%;
+  margin-top: 6px;
 }
 
 .brand-editor {
