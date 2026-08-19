@@ -11,7 +11,7 @@ Brand Compliance Checker/Color Picker
 
 Navigate to:
 
-https://github.com/asad310397/sesimi-color-picker
+https://github.com/myadbox/sesimi-color-picker
 
 Navigate to Code > Download ZIP:
 
